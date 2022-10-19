@@ -72,7 +72,9 @@
                 android:textColor="@color/white"
                 android:justificationMode="inter_word"
                 android:text="@string/text_introduction"
-                android:textSize="13dp" />
+                android:autoSizeTextType="uniform"
+                android:autoSizeMinTextSize="6dp"
+                android:autoSizeMaxTextSize="20dp"/>
         </LinearLayout>
             <ImageView
                 android:layout_width="0dp"

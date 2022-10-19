@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -19,12 +20,30 @@ class MainActivity : AppCompatActivity() {
         edtpassword = findViewById(R.id.edtpassword)
     }
 
-    fun onLogin(botonlogin: View) {
-        if (edtUsername!!.text.toString()=="juan@correo.com" &&
-            edtpassword!!.text.toString()=="12345" ){
+    fun onLogin(botonlogin: View)
+    {
+        val massegeusername=getString(R.string.messageusername)
+        val massegepassword=getString(R.string.messagepassword)
+
+        if (edtUsername!!.text.toString()=="juan@correo.com") {
+            if (edtpassword!!.text.toString() == "12345") {
                 val intent = Intent(this, WelcomeActivity::class.java)
                 startActivity(intent)
 
+            } else {
+                val dialog = AlertDialog.Builder(this)
+                    .setTitle("ERROR")
+                    .setMessage(massegepassword)
+                    .create()
+                    .show()
+            }
+
+        }  else {
+            val dialog = AlertDialog.Builder(this)
+                .setTitle("ERROR")
+                .setMessage(massegeusername)
+                .create()
+                .show()
         }
     }
 }
