@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Vampire</string>
+    <string name="text_username">Username:</string>
+    <string name="text_password">Password</string>
+    <string name="text_welcome">Welcome</string>
+    <string name="user">Juan David</string>
+    <string name="titulo_introduction">Vampire: The Masquerade</string>
+    <string name="text_introduction">Vampire: The Masquerade is a role-playing game. It was created by Mark Rein-Hagen as the first role-playing game of the company White Wolf Game Studio. The game deals with the existence of vampires in the contemporary age, in a gothic-punk world similar to ours but darker, and was the first of a set of games that describe the different supernatural creatures of the world and that receives the name of World of Darkness.</string>
+    <string name="titulo_concept">Concept</string>
+    <string name="text_concept">The game uses the cursed, vampiric condition as a backdrop to explore themes of morality, depravity, the human condition (or appreciation of the human condition in its absence), salvation, and personal horror.[citation needed] The gloomy and exaggerated version of the real world that the vampires inhabit, called the World of Darkness, forms an already bleak canvas against which the stories and struggles of characters are painted. The themes that the game seeks to address include retaining the characters sense of self, humanity, and sanity, as well as simply keeping from being crushed by the grim opposition of mortal and supernatural antagonists and, more poignantly, surviving the politics, treachery, and often violent ambitions of their own kind.</string>
+</resources>
