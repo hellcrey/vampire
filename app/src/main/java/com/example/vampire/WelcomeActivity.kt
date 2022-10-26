@@ -14,7 +14,9 @@ class WelcomeActivity : AppCompatActivity() {
 
         val fab: View= findViewById(R.id.fab)
         fab.setOnClickListener{View->
-            Snackbar.make(View, "power", Snackbar.LENGTH_LONG).show()
+           // Snackbar.make(View, "power", Snackbar.LENGTH_LONG).show()
+            val intent = Intent(this, ToDoActivity::class.java)
+            startActivity(intent)
 
         }
     }

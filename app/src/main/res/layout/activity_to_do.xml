@@ -21,7 +21,7 @@
         app:title="@string/home"
         android:elevation="4dp"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv"
             android:layout_width="match_parent"
@@ -29,5 +29,14 @@
 
     </LinearLayout>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@color/white"
+        android:backgroundTint="@color/purple_500"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
