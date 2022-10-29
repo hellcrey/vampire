@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 
 class DetailFragment:Fragment() {
@@ -18,6 +19,15 @@ class DetailFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val fragmento= inflater.inflate(R.layout.fragment_detail, container,false)
+        var tarea= requireArguments().getString("tarea")
+        var hora=requireArguments().getString("hora")
+        var lugar=requireArguments().getString("lugar")
+        var tvTarea:TextView=fragmento.findViewById(R.id.tvTarea)
+        var tvHora:TextView=fragmento.findViewById(R.id.tvHora)
+        var tvLugar:TextView=fragmento.findViewById(R.id.tvLugar)
+        tvTarea.text=tarea
+        tvHora.text=hora
+        tvLugar.text=lugar
         return fragmento
     }
 }
