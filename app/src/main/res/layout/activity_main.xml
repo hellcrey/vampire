@@ -81,12 +81,19 @@
             android:text="Login" />
 
         <Button
-            android:id="@+id/btnOnRegidter"
+            android:id="@+id/btnRegsiter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="OnRegister"
+            android:text="Register" />
+<!--
+        <Button
+            android:id="@+id/btnOnRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onRegister"
-            android:text="Login" />
-
+            android:text="Register" />
+-->
     </LinearLayout>
 
 </LinearLayout>

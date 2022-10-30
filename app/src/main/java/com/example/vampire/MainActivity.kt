@@ -70,5 +70,12 @@ class MainActivity : AppCompatActivity() {
             */
             Toast.makeText(this, massegeusername, Toast.LENGTH_LONG).show()
         }
+
     }
+
+    fun OnRegister(view: View) {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
+    }
+
 }
