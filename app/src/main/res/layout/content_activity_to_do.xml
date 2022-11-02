@@ -17,13 +17,17 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/white"
-            android:background="@color/black"
+            android:background="#004753"
             app:title="@string/home"
             android:elevation="4dp"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/nav_graph"
+            android:layout_margin="16dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

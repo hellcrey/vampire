@@ -26,7 +26,7 @@ class ToDoActivity : AppCompatActivity() {
         }*/
         setContentView(R.layout.activity_to_do)
         setSupportActionBar(findViewById(R.id.my_toolbar))
-        val fab: View = findViewById(R.id.fab)
+        val fab: View = findViewById(R.id.fabHome)
         fab.setOnClickListener { view-> }
         val drawerLayout : DrawerLayout = findViewById(R.id.drawer_layout)
         val navView : NavigationView = findViewById(R.id.navview)
