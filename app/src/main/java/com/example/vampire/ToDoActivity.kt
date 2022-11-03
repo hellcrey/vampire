@@ -16,15 +16,16 @@ class ToDoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to_do)
-
-      /*  if(savedInstanceState==null)
+/*
+        if(savedInstanceState==null)
         {
             supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fcv,ToDoFragment::class.java, null,"todo")
                 .commit()
-        }*/
-        setContentView(R.layout.activity_to_do)
+        }
+        */
+      // setContentView(R.layout.activity_to_do)
         setSupportActionBar(findViewById(R.id.my_toolbar))
         val fab: View = findViewById(R.id.fabHome)
         fab.setOnClickListener { view-> }

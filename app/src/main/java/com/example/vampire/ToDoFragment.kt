@@ -55,10 +55,30 @@ class ToDoFragment: Fragment() {
         var myTaskPlaces: ArrayList<String> = ArrayList()
         myTaskTitles.add("ir a super mercado")
         myTaskTitles.add("llevar el carro a mantenimiento")
+        myTaskTitles.add("tarea 3")
+        myTaskTitles.add("tarea 4")
+        myTaskTitles.add("tarea 5")
+        myTaskTitles.add("tarea 6")
+        myTaskTitles.add("tarea 7")
+
+
+
         myTaskTimes.add("10:03 PM")
         myTaskTimes.add("12:00 M")
+        myTaskTimes.add("10:03 PM")
+        myTaskTimes.add("12:00 M")
+        myTaskTimes.add("10:03 PM")
+        myTaskTimes.add("12:00 M")
+        myTaskTimes.add("10:03 PM")
+
         myTaskPlaces.add("superx")
         myTaskPlaces.add("tallerx")
+        myTaskPlaces.add("superx")
+        myTaskPlaces.add("tallerx")
+        myTaskPlaces.add("superx")
+        myTaskPlaces.add("tallerx")
+        myTaskPlaces.add("superx")
+
         var info : Bundle=Bundle()
         info.putStringArrayList("titles", myTaskTitles)
         info.putStringArrayList("times", myTaskTimes)
