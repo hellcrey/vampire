@@ -6,13 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     //variables
-    private var edtUsername: EditText?=null
+   private var edtUsername: EditText?=null
     private var edtpassword: TextInputEditText?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,8 +29,8 @@ class MainActivity : AppCompatActivity() {
     {
         val massegeusername=getString(R.string.messageusername)
         val massegepassword=getString(R.string.messagepassword)
-        var username: String=edtUsername!!.text.toString()
-        if (username=="juan@correo.com")
+        var username : String = edtUsername!!.text.toString()
+        if (username == "juan@correo.com")
         {
             if (edtpassword!!.text.toString() == "12345")
             {
@@ -41,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
                 val dialog= AlertDialog.Builder(this)
                                                 .setTitle("welcome")
-                                                .setMessage("User: "+ username)
+                                                .setMessage("User: "+ username) //por cambiar la variable
                                                 .setPositiveButton("ok", positiveButton)
                                                 .setNegativeButton("Cancelar", negativeButton)
                                                 .create()
@@ -76,6 +78,40 @@ class MainActivity : AppCompatActivity() {
     fun OnRegister(view: View) {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
+    }
+
+    fun OnRegisterEmail(view: View) {
+        title = "Autentificacion"
+        if (edtUsername!!.text.toString().isNotEmpty() && edtpassword!!.text.toString().isNotEmpty()) {
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(
+                edtUsername!!.text.toString() ,
+                edtpassword!!.text.toString()
+            ).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    Toast.makeText(this, "correcto", Toast.LENGTH_LONG).show()
+                } else {
+                    showAlert()
+                }
+            }
+        }
+    }
+    private fun showAlert(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("ERROR")
+        builder.setMessage("error al autenticar")
+        builder.setPositiveButton("Acepta", null)
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun showHome(email : String, provider : providerType ){
+        val homeIntent = Intent(this,WelcomeActivity::class.java)
+            .apply {
+                putExtra("email",email)
+                putExtra("provider", provider.name)
+
+            }
+        startActivity(homeIntent)
     }
 
 }

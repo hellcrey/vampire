@@ -87,14 +87,19 @@
             android:text="Register"
             android:textColor="@color/white"
             android:backgroundTint="#004753"/>
-<!--
+        
+
+
+        
         <Button
-            android:id="@+id/btnOnRegister"
+            android:id="@+id/btnOnRegisterEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRegister"
-            android:text="Register" />
--->
+            android:onClick="OnRegisterEmail"
+            android:text="Register Email" />
+
+
+
 <ImageView
     android:layout_width="50dp"
     android:layout_height="50dp"

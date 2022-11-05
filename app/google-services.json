@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1086447995287",
+    "project_id": "appdonadelsabor",
+    "storage_bucket": "appdonadelsabor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086447995287:android:1ce4a589240fbb6bc61cd2",
+        "android_client_info": {
+          "package_name": "com.example.vampire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1086447995287-pmhft8bhh2v6lqotvbp6dung081hhsmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8rTPDrXp_8KHuHs4TPbcAFnh3MzNvFO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1086447995287-pmhft8bhh2v6lqotvbp6dung081hhsmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,6 +6,10 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.snackbar.Snackbar
 
+enum class providerType{
+
+}
+
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
