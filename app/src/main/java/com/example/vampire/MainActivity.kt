@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
     //variables
    private var edtUsername: EditText?=null
-    private var edtpassword: TextInputEditText?=null
+    private var edtpassword: EditText?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val massegeusername=getString(R.string.messageusername)
         val massegepassword=getString(R.string.messagepassword)
         var username : String = edtUsername!!.text.toString()
+        //var password : String = edtpassword!!.text.toString()
         if (username == "juan@correo.com")
         {
             if (edtpassword!!.text.toString() == "12345")
@@ -82,13 +83,14 @@ class MainActivity : AppCompatActivity() {
 
     fun OnRegisterEmail(view: View) {
         title = "Autentificacion"
-        if (edtUsername!!.text.toString().isNotEmpty() && edtpassword!!.text.toString().isNotEmpty()) {
+        if (edtUsername!!.text.isNotEmpty() && edtpassword!!.text.isNotEmpty()) {
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(
                 edtUsername!!.text.toString() ,
                 edtpassword!!.text.toString()
             ).addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(this, "correcto", Toast.LENGTH_LONG).show()
+                    showHome(it.result?.user?.email?:"",providerType.BASIC)
                 } else {
                     showAlert()
                 }
@@ -112,6 +114,24 @@ class MainActivity : AppCompatActivity() {
 
             }
         startActivity(homeIntent)
+    }
+
+    fun OnLoginEmail(view: View) {
+        title = "Autentificacion"
+        if (edtUsername!!.text.isNotEmpty() && edtpassword!!.text.isNotEmpty()) {
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(
+                edtUsername!!.text.toString() ,
+                edtpassword!!.text.toString()
+            ).addOnCompleteListener {
+                if (it.isSuccessful) {
+                    //Toast.makeText(this, "correcto", Toast.LENGTH_LONG).show()
+                    showHome(it.result?.user?.email?:"",providerType.BASIC)
+                } else {
+                    showAlert()
+                }
+            }
+        }
+
     }
 
 }

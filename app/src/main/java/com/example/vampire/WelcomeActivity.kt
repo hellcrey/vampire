@@ -7,7 +7,7 @@ import android.view.View
 import com.google.android.material.snackbar.Snackbar
 
 enum class providerType{
-
+    BASIC
 }
 
 class WelcomeActivity : AppCompatActivity() {

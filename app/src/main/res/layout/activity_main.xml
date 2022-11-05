@@ -90,13 +90,27 @@
         
 
 
-        
-        <Button
-            android:id="@+id/btnOnRegisterEmail"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="16dp">
+        <Button
+            android:id="@+id/btnOnRegisterEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:onClick="OnRegisterEmail"
-            android:text="Register Email" />
+            android:text="Register Email"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:id="@+id/btnOnLoginEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnLoginEmail"
+            android:text="Login Email" />
+
+        </LinearLayout>
 
 
 
