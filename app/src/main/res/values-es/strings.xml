@@ -11,4 +11,5 @@
     <string name="messageusername">Usuario invalido</string>
     <string name="text_concept">El juego utiliza la condición vampírica maldita como telón de fondo para explorar temas de moralidad, depravación, la condición humana (o apreciación de la condición humana en su ausencia), salvación y horror personal. [ cita requerida ] La versión sombría y exagerada del mundo real que habitan los vampiros, llamado  Mundo de la Oscuridad , forma un lienzo ya sombrío contra el cual se pintan las historias y las luchas de los personajes. Los temas que el juego busca abordar incluyen conservar el sentido de sí mismo, la humanidad y la cordura del personaje, así como simplemente evitar ser aplastado por la sombría oposición de los antagonistas mortales y sobrenaturales y, lo que es más conmovedor, sobrevivir a la política, la traición y la a menudo violentas ambiciones de su propia especie.</string>
     <string name="home">Inicio</string>
+    <string name="prefs_file">com.example.vampire.PREFERENCE_FILE_KEY</string>
 </resources>

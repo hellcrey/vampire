@@ -35,16 +35,24 @@
             android:layout_marginTop="28dp"
             android:gravity="center">
             <TextView
+                android:id="@+id/textprovedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
+                android:textSize="25sp"
                 android:text="@string/text_welcome"/>
             <TextView
+                android:id="@+id/textemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
+                android:textSize="20sp"
 
                 android:text="@string/user"/>
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cerrar seccion"/>
 
         </LinearLayout>
         <ImageView
