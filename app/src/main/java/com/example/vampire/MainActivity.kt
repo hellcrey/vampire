@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
    private var edtUsername: EditText?=null
     private var edtpassword: EditText?=null
     private var authLayout: LinearLayout?=null
+    private var tvForgotPassword: TextView?= null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,8 +43,14 @@ class MainActivity : AppCompatActivity() {
         edtpassword = findViewById(R.id.edtpassword)
         authLayout = findViewById(R.id.authLayout)
         btnGoogle = findViewById(R.id.btnGoogle)
+        tvForgotPassword = findViewById(R.id.tvForgotPassword)
         session()
         loginGoogle()
+        tvForgotPassword!!.setOnClickListener{
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun onLogin(botonlogin: View)

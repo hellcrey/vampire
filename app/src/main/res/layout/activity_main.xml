@@ -31,8 +31,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:src="@drawable/donalogot" />
 
 
@@ -118,11 +118,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+<TextView
+    android:id="@+id/tvForgotPassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="I forgot the password"
+    android:textSize="15sp"
+    android:gravity="center"
+    android:layout_margin="10dp"/>
 
 <ImageView
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:src="@drawable/fac"/>
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:src="@drawable/fac" />
     </LinearLayout>
 
 
