@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1086447995287-ckp7qjhljglb86utie7308s1r2e1kgfh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vampire",
+            "certificate_hash": "42a6a09d84802b448ad7fe0bf9d93606d17d8fe0"
+          }
+        },
+        {
           "client_id": "1086447995287-pmhft8bhh2v6lqotvbp6dung081hhsmj.apps.googleusercontent.com",
           "client_type": 3
         }

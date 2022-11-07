@@ -12,14 +12,28 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
+import com.google.android.gms.common.api.ApiException
+import com.google.android.gms.tasks.Task
 import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.AuthCredential
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import java.security.Provider
 
 class MainActivity : AppCompatActivity() {
     //variables
+    private val GOOGLE_SING_IN=100
+    private  var btnGoogle : SignInButton? = null
    private var edtUsername: EditText?=null
     private var edtpassword: EditText?=null
     private var authLayout: LinearLayout?=null
+    private var tvForgotPassword: TextView?= null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +42,15 @@ class MainActivity : AppCompatActivity() {
         edtUsername = findViewById(R.id.edtUsername)
         edtpassword = findViewById(R.id.edtpassword)
         authLayout = findViewById(R.id.authLayout)
+        btnGoogle = findViewById(R.id.btnGoogle)
+        tvForgotPassword = findViewById(R.id.tvForgotPassword)
         session()
+        loginGoogle()
+        tvForgotPassword!!.setOnClickListener{
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun onLogin(botonlogin: View)
@@ -166,5 +188,46 @@ class MainActivity : AppCompatActivity() {
         prefs.apply()
         FirebaseAuth.getInstance().signOut()
         onBackPressed()
+    }
+
+    fun loginGoogle(){
+        btnGoogle!!.setOnClickListener{
+            val googleleConf : GoogleSignInOptions = GoogleSignInOptions
+                .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail().build()
+            val googleClient : GoogleSignInClient = GoogleSignIn.getClient(
+                this,googleleConf
+            )
+            googleClient.signOut()
+            startActivityForResult(googleClient.signInIntent,GOOGLE_SING_IN)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode==GOOGLE_SING_IN){
+            val task: Task<GoogleSignInAccount> = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account : GoogleSignInAccount? = task.getResult(ApiException::class.java)
+                if (account != null){
+                   val credential : AuthCredential = GoogleAuthProvider.getCredential(account.idToken, null)
+                    FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener {
+                        if (it.isSuccessful){
+                            showHome(account.email ?:"",providerType.GOOGLE)
+                        }else{
+                            showAlert()
+                        }
+                    }
+                }
+            }catch (e: ApiException){
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("error")
+                builder.setMessage(e.toString())
+                builder.setPositiveButton("Aceptar", null)
+                val dialog : AlertDialog= builder.create()
+                    dialog.show()
+            }
+        }
     }
 }
