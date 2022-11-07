@@ -9,7 +9,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
+    android:background="#A3D0D4"
     tools:context=".WelcomeActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:titleTextColor="@color/white"
-        android:background="@color/purple_500"
+        android:background="#004753"
         app:title="@string/user"
         android:elevation="4dp"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
@@ -35,17 +35,24 @@
             android:layout_marginTop="28dp"
             android:gravity="center">
             <TextView
+                android:id="@+id/textprovedor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/purple_500"
+                android:textSize="25sp"
                 android:text="@string/text_welcome"/>
             <TextView
+                android:id="@+id/textemail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/white"
+                android:textSize="20sp"
+
                 android:text="@string/user"/>
+
+            <Button
+                android:id="@+id/btnLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cerrar seccion"/>
 
         </LinearLayout>
         <ImageView
@@ -53,7 +60,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:layout_marginLeft="25dp"
-            android:src="@drawable/vampiromascarade"/>
+            android:src="@drawable/donalogot"/>
 
     </LinearLayout>
 
@@ -74,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
-                android:textColor="@color/purple_500"
+
                 android:textStyle="bold"
                 android:text="@string/titulo_introduction"
                 android:textAlignment="center"/>
@@ -82,7 +89,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="213dp"
-                android:textColor="@color/white"
+
                 android:justificationMode="inter_word"
                 android:text="@string/text_introduction"
                 android:autoSizeTextType="uniform"
@@ -93,7 +100,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@drawable/vampirered"
+                android:src="@drawable/donalogo"
                 android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
@@ -103,14 +110,14 @@
         android:layout_height="0dp"
         android:layout_weight="1.6"
         android:layout_margin="15dp">
-
+<!--
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/vampirered"
             android:layout_marginRight="15dp"/>
-
+-->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -123,14 +130,13 @@
             android:text="@string/titulo_concept"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/purple_500"
+
             android:textAlignment="center"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_concept"
-            android:textColor="@color/white"
             android:justificationMode="inter_word"/>
 
         </LinearLayout>
@@ -146,7 +152,7 @@
         android:layout_margin="16dp"
         android:src="@android:drawable/ic_input_add"
         app:tint="@color/white"
-        android:backgroundTint="@color/purple_500">
+        android:backgroundTint="#004753">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
 

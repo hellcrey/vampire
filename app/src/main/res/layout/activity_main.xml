@@ -5,8 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/authLayout"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#A3D0D4">
 
     <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         esta linea de codigo me afectaba a la hora de arrancar el progrman
@@ -16,7 +18,7 @@
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/black"
+        android:background="#004753"
         android:elevation="4dp"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"
         app:titleTextColor="@color/white" />
@@ -29,15 +31,11 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/vampireword" />
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/donalogot" />
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/vampiromascarade" />
+
 
     </LinearLayout>
 
@@ -78,15 +76,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onLogin"
-            android:text="Login" />
+            android:text="Login"
+            android:textColor="@color/white"
+            android:backgroundTint="#004753"/>
 
         <Button
-            android:id="@+id/btnOnRegidter"
+            android:id="@+id/btnRegsiter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRegister"
-            android:text="Login" />
+            android:onClick="OnRegister"
+            android:text="Register"
+            android:textColor="@color/white"
+            android:backgroundTint="#004753"/>
+        
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="16dp">
+        <Button
+            android:id="@+id/btnOnRegisterEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnRegisterEmail"
+            android:text="Register Email"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:id="@+id/btnOnLoginEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OnLoginEmail"
+            android:text="Login Email" />
+
+        </LinearLayout>
+
+
+
+<ImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/fac"/>
     </LinearLayout>
+
 
 </LinearLayout>

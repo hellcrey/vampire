@@ -1,14 +1,15 @@
 <resources>
-    <string name="app_name">Vampire</string>
+    <string name="app_name">La DoÑa Del Sabor</string>
     <string name="text_username">Nombre de Usuario:</string>
     <string name="text_password">Contraseña</string>
     <string name="text_welcome">Bienvenidos</string>
     <string name="user">Juan David</string>
-    <string name="titulo_introduction">Vampiro: La Mascarada</string>
+    <string name="titulo_introduction">Doña del sabor</string>
     <string name="text_introduction">Vampiro: La Mascarada es un juego de rol. Fue creado por Mark Rein-Hagen como el primer juego de rol de la compañía White Wolf Game Studio. El juego versa sobre la existencia de vampiros en la edad contemporánea, en un mundo gótico-punk parecido al nuestro pero más oscuro, y fue el primero de un conjunto de juegos que describen las diferentes criaturas sobrenaturales del mundo y que recibe el nombre de Mundo de Tinieblas.</string>
     <string name="titulo_concept">Concepto</string>
     <string name="messagepassword">contraseña invalida</string>
     <string name="messageusername">Usuario invalido</string>
     <string name="text_concept">El juego utiliza la condición vampírica maldita como telón de fondo para explorar temas de moralidad, depravación, la condición humana (o apreciación de la condición humana en su ausencia), salvación y horror personal. [ cita requerida ] La versión sombría y exagerada del mundo real que habitan los vampiros, llamado  Mundo de la Oscuridad , forma un lienzo ya sombrío contra el cual se pintan las historias y las luchas de los personajes. Los temas que el juego busca abordar incluyen conservar el sentido de sí mismo, la humanidad y la cordura del personaje, así como simplemente evitar ser aplastado por la sombría oposición de los antagonistas mortales y sobrenaturales y, lo que es más conmovedor, sobrevivir a la política, la traición y la a menudo violentas ambiciones de su propia especie.</string>
     <string name="home">Inicio</string>
+    <string name="prefs_file">com.example.vampire.PREFERENCE_FILE_KEY</string>
 </resources>
