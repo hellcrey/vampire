@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="DetailFragment">
+    tools:context="DetailFragment"
+    android:background="#A3D0D4">
     
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/donalogot"/>
     
     <TextView
         android:id="@+id/tvTarea"

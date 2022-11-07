@@ -5,13 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context="AboutFragment">
+    android:gravity="center_horizontal"
+    tools:context="AboutFragment"
+    android:background="#A3D0D4">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher"/>
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/fotoperfil"
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,6 +21,26 @@
         android:layout_marginTop="10dp"
         android:textSize="20sp"
         android:gravity="center"
-        android:text="Developed by Juan"/>
+        android:text="Developed by Juan"
+        android:layout_marginBottom="100dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/juliana_leguizamon"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Developed by Juliana"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/donalogot"
+        android:layout_marginTop="40dp"/>
 
 </LinearLayout>

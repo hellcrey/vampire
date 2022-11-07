@@ -31,8 +31,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
             android:src="@drawable/donalogot" />
 
 
@@ -41,8 +41,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:orientation="vertical">
 
         <TextView
@@ -71,67 +71,95 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnLogin"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onLogin"
-            android:text="Login"
-            android:textColor="@color/white"
-            android:backgroundTint="#004753"/>
+            android:layout_margin="5dp"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/btnRegsiter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="OnRegister"
-            android:text="Register"
-            android:textColor="@color/white"
-            android:backgroundTint="#004753"/>
-        
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:backgroundTint="#004753"
+                android:onClick="onLogin"
+                android:text="Login"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/btnRegsiter"
+                android:layout_width="137dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#004753"
+                android:onClick="OnRegister"
+                android:text="Register"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_margin="16dp">
-        <Button
-            android:id="@+id/btnOnRegisterEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="OnRegisterEmail"
-            android:text="Register Email"
-            android:layout_marginRight="5dp"/>
+            android:layout_margin="16dp"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/btnOnLoginEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="OnLoginEmail"
-            android:text="Login Email" />
+            <Button
+                android:id="@+id/btnOnRegisterEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:onClick="OnRegisterEmail"
+                android:text="Register Email" />
+
+            <Button
+                android:id="@+id/btnOnLoginEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="OnLoginEmail"
+                android:text="Login Email" />
 
         </LinearLayout>
-    
+
         <com.google.android.gms.common.SignInButton
             android:id="@+id/btnGoogle"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:hint="I forgot the password"
+            android:textSize="15sp" />
 
-<TextView
-    android:id="@+id/tvForgotPassword"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="I forgot the password"
-    android:textSize="15sp"
-    android:gravity="center"
-    android:layout_margin="10dp"/>
 
-<ImageView
-    android:layout_width="30dp"
-    android:layout_height="30dp"
-    android:src="@drawable/fac" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="6dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/fac"
+            android:layout_marginRight="15dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/instagram"
+            android:layout_marginRight="15dp"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/twiter" />
 
+    </LinearLayout>
 
 </LinearLayout>
