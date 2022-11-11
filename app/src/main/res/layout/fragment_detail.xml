@@ -13,7 +13,13 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/donalogot"/>
-    
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"/>
     <TextView
         android:id="@+id/tvTarea"
         android:layout_width="wrap_content"
@@ -35,5 +41,12 @@
         android:layout_marginTop="10dp"
         android:text="lugar"
         android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/btnEditfd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:text="Edit Task"/>
 
 </LinearLayout>

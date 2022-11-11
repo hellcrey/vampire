@@ -24,6 +24,8 @@ class ToDoFragment: Fragment() {
     var myTaskTimes: ArrayList<String> = ArrayList()
     var myTaskPlaces: ArrayList<String> = ArrayList()
 
+    var myTaskIds : ArrayList<String> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -115,6 +117,8 @@ class ToDoFragment: Fragment() {
         info.putStringArrayList("titles", myTaskTitles)
         info.putStringArrayList("times", myTaskTimes)
         info.putStringArrayList("places", myTaskPlaces)
+        info.putStringArrayList("ids", myTaskIds)
+
         listRecyclerView = requireView().findViewById(R.id.recyclerToDDoList)
         myAdapter = MyTaskListAdapter(activity as AppCompatActivity, info)
         listRecyclerView.setHasFixedSize(true)
@@ -128,23 +132,25 @@ class ToDoFragment: Fragment() {
     fun updateList(){
         val db = ToDoDatabase.getDatabase(requireActivity())
         val toDoDAD = db.todoDao()
-        runBlocking {
+ /*       runBlocking {
             launch {
                 var result = toDoDAD.getAllTasks()
                 var i=1
                 myTaskTitles.clear()
                 myTaskTimes.clear()
                 myTaskPlaces.clear()
+                myTaskIds.clear()
 
                 while(i< result.size){
                     myTaskTitles.add(result[i].title.toString())
                     myTaskTimes.add(result[i].time.toString())
                     myTaskPlaces.add(result[i].place.toString())
+                    myTaskIds.add(result[i].id.toString())
                     i++
                 }
                 myAdapter.notifyDataSetChanged()
             }
-        }
+        }*/
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

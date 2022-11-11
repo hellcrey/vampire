@@ -17,6 +17,8 @@ class MyTaskListAdapter(context : AppCompatActivity,
     var myTAskTitles:ArrayList<String> = info.getStringArrayList("titles") as ArrayList<String>
     var myTAskPlace:ArrayList<String> = info.getStringArrayList("places") as ArrayList<String>
     var myTAskTime:ArrayList<String> = info.getStringArrayList("times") as ArrayList<String>
+    var myTaskIds: ArrayList<String> = info.getStringArrayList("ids") as ArrayList<String>
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.task_list_item, parent,false)
@@ -38,6 +40,8 @@ class MyTaskListAdapter(context : AppCompatActivity,
             datos.putString("tarea",textViewTask.text as String)
             datos.putString("hora",textViewTime.text as String)
             datos.putString("lugar",myTAskPlace[position])
+            datos.putString("id", myTaskIds[position])
+
             context.getSupportFragmentManager()?.beginTransaction()
                 ?.setReorderingAllowed(true)
                 ?.replace(R.id.fcv,DetailFragment::class.java,datos,"detail")
