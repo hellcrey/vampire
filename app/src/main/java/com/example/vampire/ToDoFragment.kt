@@ -12,7 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vampire.room_database.ToDoDAD
 import com.example.vampire.room_database.ToDoDatabase
+import com.example.vampire.room_database.ToDoRepository.ToDoRepository
+import com.example.vampire.room_database.viewmodel.ToDoViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
@@ -25,6 +28,9 @@ class ToDoFragment: Fragment() {
     var myTaskPlaces: ArrayList<String> = ArrayList()
 
     var myTaskIds : ArrayList<String> = ArrayList()
+    var info :Bundle = Bundle()
+    private lateinit var toDoViewModel: ToDoViewModel
+    private lateinit var toDoRepository: ToDoRepository
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -151,6 +157,29 @@ class ToDoFragment: Fragment() {
                 myAdapter.notifyDataSetChanged()
             }
         }*/
+
+        toDoRepository = ToDoRepository(toDoDAD)
+        toDoViewModel = ToDoViewModel(toDoRepository)
+        var result = toDoViewModel.getAlltasks()
+        result.invokeOnCompletion {
+            var theTask = toDoViewModel.getTheTask()
+            if (theTask!!.size!=0){
+                var i=1
+                myTaskTitles.clear()
+                myTaskTimes.clear()
+                myTaskPlaces.clear()
+                myTaskIds.clear()
+
+                while(i< theTask.size){
+                    myTaskTitles.add(theTask[i].title.toString())
+                    myTaskTimes.add(theTask[i].time.toString())
+                    myTaskPlaces.add(theTask[i].place.toString())
+                    myTaskIds.add(theTask[i].id.toString())
+                    i++
+                }
+                myAdapter.notifyDataSetChanged()
+            }
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
