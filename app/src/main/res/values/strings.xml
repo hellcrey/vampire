@@ -4,12 +4,14 @@
     <string name="text_password">Password</string>
     <string name="text_welcome">Welcome</string>
     <string name="user">Juan David</string>
-    <string name="titulo_introduction">Doña Del Sabor</string>
-    <string name="text_introduction">Es un restaurante de comida costeña en el área metropolitana de Bogotá abrimos nuestras puertas a todos los bogotanos que desean conoce el menú y el valor de los productos</string>
-    <string name="titulo_concept">Concept</string>
+    <!--
+    <string name="titulo_introduction"></string>
+    <string name="text_introduction"></string>
+    -->
+    <string name="titulo_concept">Doña Del Sabor</string>
     <string name="messagepassword">invalid password</string>
     <string name="messageusername">invalid Username</string>
-    <string name="text_concept">The game uses the cursed, vampiric condition as a backdrop to explore themes of morality, depravity, the human condition (or appreciation of the human condition in its absence), salvation, and personal horror.[citation needed] The gloomy and exaggerated version of the real world that the vampires inhabit, called the World of Darkness, forms an already bleak canvas against which the stories and struggles of characters are painted. The themes that the game seeks to address include retaining the characters sense of self, humanity, and sanity, as well as simply keeping from being crushed by the grim opposition of mortal and supernatural antagonists and, more poignantly, surviving the politics, treachery, and often violent ambitions of their own kind.</string>
+    <string name="text_concept">It is a coastal food restaurant in the metropolitan area of Bogota, we open our doors to all the people of Bogota who wish to know the menu and the value of the products.</string>
     <string name="home">Home</string>
     <string name="prefs_file">com.example.vampire.PREFERENCE_FILE_KEY</string>
 </resources>
