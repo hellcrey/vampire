@@ -34,5 +34,9 @@ class ListaProductoActivity : AppCompatActivity() {
                 intent.putExtra("producto",listaProductos[position])
                 startActivity(intent)
             }
+        floatinbuttonALP.setOnClickListener {
+            val intent= Intent(this, NuevoProductoActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
