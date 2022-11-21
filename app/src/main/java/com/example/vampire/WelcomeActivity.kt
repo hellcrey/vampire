@@ -19,6 +19,7 @@ class WelcomeActivity : AppCompatActivity() {
     private var textemail : TextView? = null
     private var textprovedor : TextView? = null
     private var btnLogOut : Button? = null
+    private var btnProductoAW  : Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class WelcomeActivity : AppCompatActivity() {
         textemail = findViewById(R.id.textemail)
         textprovedor = findViewById(R.id.textprovedor)
         btnLogOut = findViewById(R.id.btnLogOut)
+        btnProductoAW = findViewById(R.id.btnProductoAW)
 
         val bundle= intent.extras
         val email= bundle?.getString("email")
@@ -51,7 +53,10 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(intent)
            // onBackPressed()
         }
-
+        btnProductoAW?.setOnClickListener {
+            val intent = Intent(this, ListaProductoActivity::class.java)
+            startActivity(intent)
+        }
         //setSupportActionBar(findViewById(R.id.my_toolbar)) /* no se encuentra en el video */
 
 

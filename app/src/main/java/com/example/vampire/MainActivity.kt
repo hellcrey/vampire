@@ -225,7 +225,7 @@ class MainActivity : AppCompatActivity() {
                 builder.setTitle("error")
                 builder.setMessage(e.toString())
                 builder.setPositiveButton("Aceptar", null)
-                val dialog : AlertDialog= builder.create()
+                val dialog : AlertDialog = builder.create()
                     dialog.show()
             }
         }
