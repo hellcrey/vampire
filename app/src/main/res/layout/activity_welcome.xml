@@ -52,6 +52,8 @@
                 android:id="@+id/btnLogOut"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:backgroundTint="#004753"
                 android:text="cerrar seccion"/>
 
         </LinearLayout>
@@ -67,7 +69,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_weight="1.5"
         android:orientation="vertical"
         android:layout_margin="5dp">
         <!--
@@ -110,6 +112,8 @@
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:textColor="@color/white"
+            android:backgroundTint="#004753"
             android:text="MENU" />
     </LinearLayout>
 
@@ -144,6 +148,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:text="@string/text_concept"
             android:justificationMode="inter_word"/>
 

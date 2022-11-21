@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.example.vampire.room_database.AdminProduct.ImagenController
 import com.example.vampire.room_database.AdminProduct.Producto
 import com.example.vampire.room_database.AdminProduct.ProductoDatabase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,10 +19,12 @@ class ProductoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_producto)
         val producto = intent.getSerializableExtra("producto") as Producto
+        val imageUri= ImagenController.getImagenUri(this, producto.idProducto.toLong())
         textViewNombreAP.text= producto.nombre
         textViewPrecioAP.text="${producto.precio}"
         textViewDetalleeAP.text=producto.descripcion
-        imageViewPerdilAP.setImageResource(producto.imagen)
+        //imageViewPerdilAP.setImageResource(producto.imagen)
+        imageViewPerdilAP.setImageURI(imageUri)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -42,7 +45,7 @@ class ProductoActivity : AppCompatActivity() {
             R.id.delete_item->{
                 CoroutineScope(Dispatchers.IO).launch {
                     database.productos().delete(producto)
-                    dbFirebase.collection("productos")
+                    dbFirebase.collection("Productos")
                         .document(producto.idProducto.toString()).delete()
                     this@ProductoActivity.finish()
                 }

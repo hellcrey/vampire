@@ -2,6 +2,7 @@ package com.example.vampire
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.vampire.room_database.AdminProduct.ImagenController
@@ -17,7 +18,7 @@ import kotlinx.coroutines.launch
 class NuevoProductoActivity : AppCompatActivity() {
 
     private val SELECT_ACTIVITY=50
-
+    private var imagenUrl: Uri?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_producto)
@@ -30,6 +31,8 @@ class NuevoProductoActivity : AppCompatActivity() {
             editTextPrecioANP.setText(producto.precio.toString())
             editTextDescripcionANP.setText(producto.descripcion)
             idproducto=producto.idProducto
+            val imageUri=ImagenController.getImagenUri(this, producto.idProducto.toLong())
+            imageViewSelectANP.setImageURI(imageUri)
         }
         buttonANP.setOnClickListener {
             val nombre = editTextNombreANP.text.toString()
@@ -51,11 +54,17 @@ class NuevoProductoActivity : AppCompatActivity() {
                       )
 //                  setResult(Activity.RESULT_OK)
 //                  finish()
+                  imagenUrl?.let {
+                      ImagenController.saveImagen(this@NuevoProductoActivity, result, it)
+                  }
                   this@NuevoProductoActivity.finish()
               }
           }else{
               CoroutineScope(Dispatchers.IO).launch {
                   database.productos().update(producto)
+                  imagenUrl?.let {
+                      ImagenController.saveImagen(this@NuevoProductoActivity, idproducto.toLong(), it)
+                  }
                   dbFirebase.collection("Productos").document(idproducto.toString())
                       .set(
                           hashMapOf(
@@ -75,4 +84,13 @@ class NuevoProductoActivity : AppCompatActivity() {
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when{
+            requestCode==SELECT_ACTIVITY && resultCode==Activity.RESULT_OK-> {
+                imagenUrl = data!!.data
+                imageViewSelectANP.setImageURI(imagenUrl)
+            }
+        }
+    }
 }
