@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.vampire.room_database.AdminProduct.ImagenController
 import com.example.vampire.room_database.AdminProduct.Producto
 import com.example.vampire.room_database.AdminProduct.ProductoDatabase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,6 +15,9 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 class NuevoProductoActivity : AppCompatActivity() {
+
+    private val SELECT_ACTIVITY=50
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_producto)
@@ -66,5 +70,9 @@ class NuevoProductoActivity : AppCompatActivity() {
               startActivity(principal)
           }
         }
+        imageViewSelectANP.setOnClickListener {
+            ImagenController.selectPhoneFromGallery(this, SELECT_ACTIVITY)
+        }
     }
+
 }
